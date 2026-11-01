@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Amanda Lopez Media Kit</title>
+<title>Amanda López Media Kit</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Amanda Lopez — lifestyle, fashion, beauty and travel creator. Media kit 2026.">
+<meta name="description" content="Amanda López — lifestyle, fashion, beauty and travel creator. Media kit 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: editorial magazine spread — arched cover photo, chocolate data band, pinned horizontal photo reel, oversized cursive sign-off */
+/* Layout: editorial magazine spread — arched cover photo, chocolate data band, collaborations slideshow, oversized cursive sign-off */
 :root{
   --bg:#F4EDE4;          /* cream paper */
   --surface:#EADFD3;     /* nude card */
@@ -212,28 +212,48 @@ img{max-width:100%;display:block}
 .src{margin-top:clamp(40px,5vw,64px);padding-top:22px;border-top:1px solid var(--line-deep);font-size:.78rem;color:var(--on-deep-muted);max-width:90ch}
 @media(max-width:860px){.ins-lower{grid-template-columns:1fr}}
 
-/* ---------- portfolio (pinned horizontal reel) ---------- */
-.work{position:relative;padding-block:clamp(80px,10vw,130px) 0}
-.work-pin{display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)}
-.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px}
-.reel-wrap{overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--gut-l);scrollbar-width:none;padding-bottom:clamp(60px,8vw,110px)}
-.reel-wrap::-webkit-scrollbar{display:none}
-.reel{display:flex;gap:clamp(14px,2vw,26px);width:max-content;padding-left:var(--gut-l);padding-right:var(--gut-r)}
-@media(min-width:1320px){.reel{padding-left:calc((100vw - var(--wrap))/2 + 40px)}.reel-wrap{scroll-padding-left:calc((100vw - var(--wrap))/2 + 40px)}}
-.shot{position:relative;margin:0;flex:0 0 auto;width:clamp(240px,27vw,380px);aspect-ratio:3/4.4;border-radius:16px;overflow:hidden;background:var(--surface);scroll-snap-align:start;transition:transform .8s var(--ease)}
-.shot:nth-child(even){margin-top:clamp(20px,5vw,70px)}
-.shot img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--ease),filter 1s}
-.shot:hover img{transform:scale(1.08);filter:saturate(1.08)}
-.shot figcaption{position:absolute;inset:auto 0 0 0;padding:60px 20px 18px;background:linear-gradient(transparent,rgba(20,13,10,.72));color:#fff;display:flex;justify-content:space-between;align-items:end;gap:10px}
-.shot figcaption b{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:1.65rem;line-height:1}
-.shot figcaption small{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
-.reel-hint{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
-.reel-hint .bar{width:90px;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
-.reel-hint .bar i{display:block;height:100%;width:100%;background:var(--ink);transform-origin:left;transform:scaleX(var(--p,.12))}
-/* pinned mode (desktop, motion allowed) */
-.work.pinned .work-pin{position:sticky;top:0;height:100vh;height:100svh;justify-content:center;overflow:hidden}
-.work.pinned .reel-wrap{overflow:visible;scroll-snap-type:none;padding-bottom:0}
-.work.pinned .reel{will-change:transform}
+/* ---------- collaborations slideshow ---------- */
+.collab{padding-block:clamp(80px,10vw,140px)}
+.collab-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 40px;margin-bottom:clamp(32px,4vw,56px)}
+.collab-head>*{min-width:0}
+.brands{margin:0;display:flex;flex-wrap:wrap;gap:6px 0;max-width:34rem;font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--muted)}
+.brands span{white-space:nowrap}
+.brands span+span::before{content:"✦";font-style:normal;font-size:.55em;margin-inline:14px;color:var(--nude);vertical-align:middle}
+.cs{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,4vw,64px);align-items:center}
+.cs>*{min-width:0}
+.cs-stage{position:relative;aspect-ratio:6/5;max-width:100%;border-radius:24px;overflow:hidden;background:var(--deep);box-shadow:0 40px 80px -40px rgba(43,31,26,.55);touch-action:pan-y;outline-offset:4px}
+.cs-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .9s var(--ease),visibility .9s}
+.cs-slide.on{opacity:1;visibility:visible}
+.cs-bg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(30px) brightness(.5) saturate(1.2)}
+.cs-slide img{position:relative;width:100%;height:100%;object-fit:contain;transform:scale(1.06);transition:transform 7s linear}
+.cs-slide.on img{transform:scale(1)}
+.cs-tag{position:absolute;left:16px;bottom:16px;z-index:2;padding:9px 16px;border-radius:999px;background:rgba(20,13,10,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font-family:var(--font-display);font-style:italic;font-size:1.15rem;line-height:1}
+.cs-bars{position:absolute;top:12px;left:14px;right:14px;display:flex;gap:6px;z-index:3}
+.cs-bars button{flex:1;padding:6px 0;border:0;background:none;cursor:pointer}
+.cs-bars i{display:block;height:3px;border-radius:3px;background:rgba(255,255,255,.35);overflow:hidden}
+.cs-bars i::after{content:"";display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left}
+.cs-bars .done i::after{transform:scaleX(1)}
+.cs-bars .on i::after{animation:fillbar 6s linear forwards}
+.cs-stage.paused .cs-bars .on i::after{animation-play-state:paused}
+.cs-stage.no-auto .cs-bars .on i::after{animation:none;transform:scaleX(1)}
+@keyframes fillbar{to{transform:scaleX(1)}}
+.cs-info{display:flex;flex-direction:column;gap:16px}
+.cs-anim{animation:csIn .7s var(--ease)}
+@keyframes csIn{from{opacity:0;transform:translateY(16px)}}
+.cs-count{font-size:.78rem;font-weight:600;letter-spacing:.2em;color:var(--muted);font-variant-numeric:tabular-nums}
+.cs-count b{color:var(--ink);font-size:1.05rem}
+.cs-kind{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.cs-brand{margin:0;font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,5vw,4.4rem);line-height:.95;text-wrap:balance}
+.cs-desc{margin:0;color:var(--muted);max-width:40ch}
+.cs-nav{display:flex;gap:10px;margin-top:4px}
+.cs-btn{width:52px;height:52px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:1.1rem;cursor:pointer;transition:background .3s,color .3s,transform .3s var(--ease)}
+.cs-btn:hover{background:var(--ink);color:var(--bg);transform:scale(1.06)}
+.cs-thumbs{display:flex;flex-wrap:wrap;gap:8px}
+.cs-thumbs button{width:56px;height:56px;padding:0;border-radius:12px;overflow:hidden;border:2px solid transparent;background:var(--surface);cursor:pointer;opacity:.5;transition:opacity .3s,border-color .3s,transform .3s var(--ease)}
+.cs-thumbs button:hover{opacity:.85}
+.cs-thumbs img{width:100%;height:100%;object-fit:cover}
+.cs-thumbs button.on{opacity:1;border-color:var(--ink);transform:translateY(-3px)}
+@media(max-width:860px){.cs{grid-template-columns:1fr}.cs-stage{aspect-ratio:4/5}}
 
 /* ---------- services ---------- */
 .services{padding-block:clamp(80px,10vw,140px);border-top:1px solid var(--line)}
@@ -344,16 +364,16 @@ img{max-width:100%;display:block}
 </head>
 <body>
 
-<div class="loader" aria-hidden="true"><span>Amanda Lopez</span></div>
+<div class="loader" aria-hidden="true"><span>Amanda López</span></div>
 <div class="progress" id="progress"></div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="sig" href="#top" aria-label="Amanda Lopez, back to top">Amanda Lopez</a>
+    <a class="sig" href="#top" aria-label="Amanda López, back to top">Amanda López</a>
     <nav class="nav-links" aria-label="Main">
       <a href="#about" data-en="About" data-es="Sobre mí">About</a>
       <a href="#insights" data-en="Insights" data-es="Estadísticas">Insights</a>
-      <a href="#portfolio" data-en="Portfolio" data-es="Portafolio">Portfolio</a>
+      <a href="#collabs" data-en="Collabs" data-es="Colaboraciones">Collabs</a>
       <a href="#amazon">Amazon</a>
       <a href="#contact" class="keep" data-en="Contact" data-es="Contacto">Contact</a>
       <button class="lang" id="lang" type="button" aria-label="Cambiar a español"><span class="on" data-l="en">EN</span><span data-l="es">ES</span></button>
@@ -367,7 +387,7 @@ img{max-width:100%;display:block}
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <div class="eyebrow rise" style="--d:0" data-en="Digital creator · Media kit 2026" data-es="Creadora digital · Media kit 2026">Digital creator · Media kit 2026</div>
-        <h1 class="rise" style="--d:1">Amanda <span class="l2">Lopez</span></h1>
+        <h1 class="rise" style="--d:1">Amanda <span class="l2">López</span></h1>
         <p class="hero-tag rise" style="--d:2"><span data-en="Style, stories &amp; everything in between." data-es="Estilo, historias y todo lo que nos inspira.">Style, stories &amp; everything in between.</span></p>
         <p class="lede rise" style="--d:3" data-en="A fresh perspective on lifestyle, fashion, beauty and travel. Creating content that connects, inspires and feels real." data-es="Una perspectiva fresca sobre lifestyle, moda, belleza y viajes. Contenido que conecta, inspira y se siente auténtico.">A fresh perspective on lifestyle, fashion, beauty and travel. Creating content that connects, inspires and feels real.</p>
         <div class="cta-row rise" style="--d:4">
@@ -377,8 +397,8 @@ img{max-width:100%;display:block}
       </div>
 
       <div class="hero-visual rise" style="--d:1" id="heroVisual">
-        <div class="arch" data-depth="10"><img src="assets/amanda-gameday.webp" alt="Amanda Lopez in a brown leather jacket and sunglasses" width="960" height="1440" fetchpriority="high"></div>
-        <div class="inset-photo" data-depth="22"><img src="assets/amanda-bridge.webp" alt="Amanda Lopez on a rooftop by a bridge" width="960" height="1440"></div>
+        <div class="arch" data-depth="10"><img src="assets/amanda-gameday.webp" alt="Amanda López in a brown leather jacket and sunglasses" width="960" height="1440" fetchpriority="high"></div>
+        <div class="inset-photo" data-depth="22"><img src="assets/amanda-bridge.webp" alt="Amanda López on a rooftop by a bridge" width="960" height="1440"></div>
         <div class="badge" aria-hidden="true">
           <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#circ" data-en="Lifestyle · Fashion · Beauty · Travel ·" data-es="Lifestyle · Moda · Belleza · Viajes ·">Lifestyle · Fashion · Beauty · Travel ·</textPath></text></svg>
           <span class="star">✦</span>
@@ -405,10 +425,10 @@ img{max-width:100%;display:block}
             <div class="phone-body">
               <span class="pbtn l1"></span><span class="pbtn l2"></span><span class="pbtn l3"></span><span class="pbtn r1"></span>
               <div class="screen">
-                <img src="assets/amanda-home.webp" alt="Amanda Lopez wearing a fringe skirt in a styled living room, shown on a phone screen" width="960" height="1440" loading="lazy">
+                <img src="assets/amanda-home.webp" alt="Amanda López wearing a fringe skirt in a styled living room, shown on a phone screen" width="960" height="1440" loading="lazy">
                 <div class="island"></div>
                 <div class="statusbar" aria-hidden="true"><span>9:41</span><span>5G<span class="batt"></span></span></div>
-                <div class="screen-cap"><span class="s">Amanda Lopez</span><small>@amandaalopez</small></div>
+                <div class="screen-cap"><span class="s">Amanda López</span><small>@amandaalopez</small></div>
                 <div class="home-bar"></div>
                 <div class="glare"></div>
               </div>
@@ -419,7 +439,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="about-copy">
         <div class="eyebrow rv" data-en="Meet the creator" data-es="Conoce a la creadora">Meet the creator</div>
-        <p class="big-quote" id="quote" data-en="Amanda Lopez creates visual stories inspired by personal style, everyday beauty and discovering new places." data-es="Amanda Lopez crea historias visuales inspiradas en su estilo personal, la belleza cotidiana y el descubrimiento de nuevos lugares.">Amanda Lopez creates visual stories inspired by personal style, everyday beauty and discovering new places.</p>
+        <p class="big-quote" id="quote" data-en="Amanda López creates visual stories inspired by personal style, everyday beauty and discovering new places." data-es="Amanda López crea historias visuales inspiradas en su estilo personal, la belleza cotidiana y el descubrimiento de nuevos lugares.">Amanda López creates visual stories inspired by personal style, everyday beauty and discovering new places.</p>
         <p class="lede rv" data-en="Her content brings an approachable point of view to fashion, lifestyle and travel. From curated outfits to spontaneous moments, her approach blends editorial aesthetics with genuine personality." data-es="Su contenido aporta una perspectiva cercana a la moda, el lifestyle y los viajes. Desde outfits cuidadosamente seleccionados hasta momentos espontáneos, su estilo combina una estética editorial con una personalidad auténtica.">Her content brings an approachable point of view to fashion, lifestyle and travel. From curated outfits to spontaneous moments, her approach blends editorial aesthetics with genuine personality.</p>
         <ul class="pills rv" aria-label="Content categories">
           <li>Lifestyle</li><li data-en="Fashion" data-es="Moda">Fashion</li><li data-en="Beauty" data-es="Belleza">Beauty</li><li data-en="Travel" data-es="Viajes">Travel</li>
@@ -500,25 +520,54 @@ img{max-width:100%;display:block}
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section class="work" id="portfolio">
-    <div class="work-pin">
-      <div class="wrap work-head">
+  <!-- COLLABORATIONS -->
+  <section class="collab" id="collabs">
+    <div class="wrap">
+      <div class="collab-head">
         <div style="min-width:0">
-          <div class="eyebrow" data-en="A visual diary" data-es="Un diario visual">A visual diary</div>
-          <h2 class="h-xl" style="margin-top:18px"><span data-en="Life through" data-es="La vida a través">Life through</span> <em data-en="my lens." data-es="de mi lente.">my lens.</em></h2>
+          <div class="eyebrow rv" data-en="Brand collaborations" data-es="Colaboraciones con marcas">Brand collaborations</div>
+          <h2 class="h-xl rv" style="margin-top:18px"><span data-en="Brands that" data-es="Marcas que">Brands that</span> <em data-en="trust her story." data-es="confían en su historia.">trust her story.</em></h2>
         </div>
-        <div class="reel-hint" aria-hidden="true"><span data-en="Scroll" data-es="Desliza">Scroll</span><span class="bar"><i id="reelBar"></i></span></div>
+        <p class="brands rv" aria-label="Brands"><span>ACAA</span><span>Aristocrazy</span><span>Espolón Tequila</span><span>Absolut</span><span>Susan G. Komen PR</span></p>
       </div>
-      <div class="reel-wrap" id="reelWrap">
-        <div class="reel" id="reel">
-          <figure class="shot"><img src="assets/amanda-bridge.webp" alt="Amanda in a striped skirt and knee boots by a bridge" loading="lazy" width="960" height="1440"><figcaption><b data-en="City edit" data-es="Edición urbana">City edit</b><small data-en="Fashion" data-es="Moda">Fashion</small></figcaption></figure>
-          <figure class="shot"><img src="assets/amanda-night.webp" alt="Amanda at night under bright city billboards" loading="lazy" width="960" height="1440"><figcaption><b data-en="Night out" data-es="Noche de ciudad">Night out</b><small>Lifestyle</small></figcaption></figure>
-          <figure class="shot"><img src="assets/amanda-travel.webp" alt="Amanda in a shearling jacket by a colorful European harbor" loading="lazy" width="960" height="1440"><figcaption><b data-en="Travel diary" data-es="Diario de viaje">Travel diary</b><small data-en="Travel" data-es="Viajes">Travel</small></figcaption></figure>
-          <figure class="shot"><img src="assets/amanda-island.webp" alt="Amanda laughing by the water under palm trees" loading="lazy" width="960" height="1440"><figcaption><b data-en="Island time" data-es="Modo isla">Island time</b><small data-en="Travel" data-es="Viajes">Travel</small></figcaption></figure>
-          <figure class="shot"><img src="assets/amanda-gameday.webp" alt="Amanda in a leather jacket at a ballpark" loading="lazy" width="960" height="1440"><figcaption><b data-en="Game day" data-es="Día de juego">Game day</b><small data-en="Style" data-es="Estilo">Style</small></figcaption></figure>
-          <figure class="shot"><img src="assets/amanda-sofa.webp" alt="Amanda relaxing on a sofa in a styled outfit" loading="lazy" width="960" height="1440"><figcaption><b data-en="At home" data-es="En casa">At home</b><small>Lifestyle</small></figcaption></figure>
-          <figure class="shot"><img src="assets/amanda-home.webp" alt="Amanda in a fringe denim skirt" loading="lazy" width="960" height="1440"><figcaption><b data-en="Everyday edit" data-es="Look diario">Everyday edit</b><small data-en="Fashion" data-es="Moda">Fashion</small></figcaption></figure>
+      <div class="cs rv">
+        <div class="cs-stage paused" id="csStage" tabindex="0" aria-roledescription="carousel" aria-label="Brand collaborations">
+          <div class="cs-bars" id="csBars"></div>
+          <figure class="cs-slide on" data-brand="Aristocrazy" data-kind-en="Event · Store opening" data-kind-es="Evento · Apertura de tienda" data-desc-en="Amanda covered the opening of the new Aristocrazy store for her Instagram audience." data-desc-es="Amanda cubrió la apertura de la nueva tienda de Aristocrazy para su audiencia en Instagram.">
+            <div class="cs-bg" style="background-image:url('assets/collab-aristocrazy.webp')"></div>
+            <img src="assets/collab-aristocrazy.webp" alt="Amanda reading a catalog at the Aristocrazy store opening">
+            <figcaption class="cs-tag">Aristocrazy</figcaption>
+          </figure>
+          <figure class="cs-slide" data-brand="ACAA" data-kind-en="Campaign · Billboard" data-kind-es="Campaña · Valla publicitaria" data-desc-en="Face of the “ACAA es único, como tú” campaign on digital billboards." data-desc-es="Imagen de la campaña «ACAA es único, como tú» en vallas digitales." aria-hidden="true">
+            <div class="cs-bg" style="background-image:url('assets/collab-acaa-billboard.webp')"></div>
+            <img src="assets/collab-acaa-billboard.webp" alt="Digital billboard at night showing Amanda in the ACAA campaign" loading="lazy">
+            <figcaption class="cs-tag">ACAA</figcaption>
+          </figure>
+          <figure class="cs-slide" data-brand="Espolón Tequila" data-kind-en="Branded content · Instagram Reel" data-kind-es="Contenido de marca · Reel de Instagram" data-desc-en="A cocktail Reel made with Espolón Tequila for her Instagram audience." data-desc-es="Un Reel preparando cócteles con Espolón Tequila para su audiencia en Instagram." aria-hidden="true">
+            <div class="cs-bg" style="background-image:url('assets/collab-espolon.webp')"></div>
+            <img src="assets/collab-espolon.webp" alt="Amanda holding an Espolón Tequila box in a kitchen with cocktail ingredients" loading="lazy">
+            <figcaption class="cs-tag">Espolón Tequila</figcaption>
+          </figure>
+          <figure class="cs-slide" data-brand="ACAA" data-kind-en="Campaign · Gas station ads" data-kind-es="Campaña · Anuncios en gasolineras" data-desc-en="The same campaign on gas station pumps." data-desc-es="La misma campaña en los dispensadores de las gasolineras." aria-hidden="true">
+            <div class="cs-bg" style="background-image:url('assets/collab-acaa-pump.webp')"></div>
+            <img src="assets/collab-acaa-pump.webp" alt="ACAA campaign ad with Amanda on a gas station pump" loading="lazy">
+            <figcaption class="cs-tag">ACAA</figcaption>
+          </figure>
+          <figure class="cs-slide" data-brand="ACAA" data-kind-en="Campaign · Event backdrop" data-kind-es="Campaña · Mural en evento" data-desc-en="Part of the campaign cast on the ACAA event backdrop." data-desc-es="Parte del elenco de la campaña en el mural del evento de ACAA." aria-hidden="true">
+            <div class="cs-bg" style="background-image:url('assets/collab-acaa-event.webp')"></div>
+            <img src="assets/collab-acaa-event.webp" alt="ACAA event backdrop featuring Amanda with the campaign cast" loading="lazy">
+            <figcaption class="cs-tag">ACAA</figcaption>
+          </figure>
+        </div>
+        <div class="cs-info">
+          <div class="cs-count"><b id="csNum">01</b> / 05</div>
+          <div class="cs-text" id="csInfo">
+            <span class="cs-kind" id="csKind">Event · Store opening</span>
+            <h3 class="cs-brand" id="csBrand" style="margin-top:12px">Aristocrazy</h3>
+            <p class="cs-desc" id="csDesc" style="margin-top:14px">Amanda covered the opening of the new Aristocrazy store for her Instagram audience.</p>
+          </div>
+          <div class="cs-nav"><button class="cs-btn" id="csPrev" type="button" aria-label="Previous">←</button><button class="cs-btn" id="csNext" type="button" aria-label="Next">→</button></div>
+          <div class="cs-thumbs" id="csThumbs"></div>
         </div>
       </div>
     </div>
@@ -634,8 +683,8 @@ img{max-width:100%;display:block}
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <span class="sig">Amanda Lopez</span>
-    <span>© 2026 Amanda Lopez · Media Kit</span>
+    <span class="sig">Amanda López</span>
+    <span>© 2026 Amanda López · Media Kit</span>
     <nav aria-label="Social"><a href="mailto:info@updategrouppr.com">info@updategrouppr.com</a><a href="https://www.instagram.com/amandaalopez" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/@amandanlopez" target="_blank" rel="noopener">TikTok ↗</a></nav>
   </div>
 </footer>
@@ -670,7 +719,7 @@ img{max-width:100%;display:block}
     btn.querySelectorAll('span').forEach(function(s){ s.classList.toggle('on', s.dataset.l===l); });
     btn.setAttribute('aria-label', l==='en'?'Cambiar a español':'Switch to English');
     document.querySelectorAll('[data-ph-en]').forEach(function(el){ el.placeholder = l==='en'?el.dataset.phEn:el.dataset.phEs; });
-    fillMarquee(l); splitQuote(); refreshForm();
+    fillMarquee(l); splitQuote(); refreshForm(); if(typeof renderInfo==='function' && csSlides) renderInfo();
     try{ localStorage.setItem('al-lang',l); }catch(e){}
   }
   btn.addEventListener('click',function(){ setLang(lang==='en'?'es':'en'); });
@@ -700,6 +749,50 @@ img{max-width:100%;display:block}
     var n=p*qWords.length;
     qWords.forEach(function(w,i){ w.style.opacity = i<n ? 1 : .22; });
   }
+
+  /* ---- collaborations slideshow ---- */
+  var cs=document.getElementById('csStage'), csSlides=[].slice.call(cs.querySelectorAll('.cs-slide')), csI=0;
+  var csBars=document.getElementById('csBars'), csThumbs=document.getElementById('csThumbs'), csInfo=document.getElementById('csInfo');
+  function renderInfo(){
+    var sl=csSlides[csI], es=lang==='es';
+    document.getElementById('csBrand').textContent=sl.dataset.brand;
+    document.getElementById('csKind').textContent=es?sl.dataset.kindEs:sl.dataset.kindEn;
+    document.getElementById('csDesc').textContent=es?sl.dataset.descEs:sl.dataset.descEn;
+    document.getElementById('csNum').textContent=(csI<9?'0':'')+(csI+1);
+    csInfo.classList.remove('cs-anim'); void csInfo.offsetWidth; csInfo.classList.add('cs-anim');
+  }
+  function csGo(n){
+    csI=(n+csSlides.length)%csSlides.length;
+    csSlides.forEach(function(sl,i){ sl.classList.toggle('on',i===csI); sl.setAttribute('aria-hidden',i===csI?'false':'true'); });
+    [].forEach.call(csBars.children,function(b,i){ b.classList.toggle('done',i<csI); b.classList.remove('on'); b.setAttribute('aria-current',i===csI?'true':'false'); });
+    void csBars.offsetWidth; csBars.children[csI].classList.add('on');
+    [].forEach.call(csThumbs.children,function(t,i){ t.classList.toggle('on',i===csI); });
+    renderInfo();
+  }
+  csSlides.forEach(function(sl,i){
+    var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',sl.dataset.brand+' '+(i+1)+'/'+csSlides.length); b.innerHTML='<i></i>';
+    b.addEventListener('click',function(){ csGo(i); });
+    b.firstChild.addEventListener('animationend',function(){ if(i===csI) csGo(csI+1); });
+    csBars.appendChild(b);
+    var t=document.createElement('button'); t.type='button'; t.setAttribute('aria-label',sl.dataset.brand+' '+(i+1));
+    t.innerHTML='<img alt="" loading="lazy" src="'+sl.querySelector('img').getAttribute('src')+'">';
+    t.addEventListener('click',function(){ csGo(i); });
+    csThumbs.appendChild(t);
+  });
+  document.getElementById('csPrev').addEventListener('click',function(){ csGo(csI-1); });
+  document.getElementById('csNext').addEventListener('click',function(){ csGo(csI+1); });
+  cs.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') csGo(csI+1); if(e.key==='ArrowLeft') csGo(csI-1); });
+  var csX=null;
+  cs.addEventListener('touchstart',function(e){ csX=e.touches[0].clientX; },{passive:true});
+  cs.addEventListener('touchend',function(e){ if(csX===null) return; var dx=e.changedTouches[0].clientX-csX; if(Math.abs(dx)>40) csGo(csI+(dx<0?1:-1)); csX=null; });
+  var csHover=false, csSeen=false;
+  function csPause(){ cs.classList.toggle('paused', csHover || !csSeen); }
+  cs.addEventListener('mouseenter',function(){ csHover=true; csPause(); });
+  cs.addEventListener('mouseleave',function(){ csHover=false; csPause(); });
+  if(reduce){ cs.classList.add('no-auto'); }
+  else if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ csSeen=es[0].isIntersecting; csPause(); },{threshold:.35}).observe(cs); }
+  else { csSeen=true; csPause(); }
+  csGo(0);
 
   /* ---- contact form ---- */
   var MAIL='info@updategrouppr.com';
@@ -776,18 +869,6 @@ img{max-width:100%;display:block}
     rvs.forEach(function(el){ el.classList.add('on'); });
   }
 
-  /* ---- pinned horizontal reel ---- */
-  var work=document.getElementById('portfolio'), reel=document.getElementById('reel'), wrap=document.getElementById('reelWrap'), bar=document.getElementById('reelBar');
-  var pinned=false, dist=0;
-  function layoutReel(){
-    var want=!reduce && innerWidth>900;
-    work.classList.toggle('pinned',want); pinned=want;
-    if(want){ dist=Math.max(0,reel.scrollWidth-innerWidth); work.style.height=(innerHeight+dist)+'px'; }
-    else { work.style.height=''; reel.style.transform=''; }
-    onScroll();
-  }
-  wrap.addEventListener('scroll',function(){ if(!pinned){ var m=wrap.scrollWidth-wrap.clientWidth; bar.style.setProperty('--p', m>0? Math.max(.12,wrap.scrollLeft/m):1); } },{passive:true});
-
   /* ---- scroll loop ---- */
   var nav=document.getElementById('nav'), prog=document.getElementById('progress'), ticking=false;
   function onScroll(){
@@ -796,19 +877,13 @@ img{max-width:100%;display:block}
       var y=scrollY, max=document.documentElement.scrollHeight-innerHeight;
       nav.classList.toggle('scrolled',y>30);
       prog.style.transform='scaleX('+(max>0?y/max:0)+')';
-      if(pinned){
-        var top=work.offsetTop, p=Math.min(1,Math.max(0,(y-top)/Math.max(1,dist)));
-        reel.style.transform='translate3d('+(-p*dist)+'px,0,0)';
-        bar.style.setProperty('--p',Math.max(.12,p));
-      }
       paintQuote(); paintPhone();
       ticking=false;
     });
   }
   addEventListener('scroll',onScroll,{passive:true});
-  addEventListener('resize',layoutReel);
-  addEventListener('load',layoutReel);
-  layoutReel();
+  addEventListener('resize',onScroll);
+  onScroll();
 
   if(reduce || !fine) return;
 
