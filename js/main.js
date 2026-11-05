@@ -15,7 +15,6 @@
     try{localStorage.setItem('ug-lang',l)}catch(e){}
     document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.set===l)));
     document.querySelectorAll('[data-ph-en]').forEach(el=>el.placeholder=el.dataset[l==='en'?'phEn':'phEs']);
-    if(active) fillDash();
     chatReset();
   }
   document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{ if(!goLang(b.dataset.set)) setLang(b.dataset.set); }));
@@ -61,54 +60,8 @@
     finally{btn.disabled=false;btn.innerHTML=label;}
   });
 
-  // ---- Portal (prototype only: real access control happens in WordPress, on the server)
-  const PROPOSALS={
-    "UPDATE2026":{client:"Café Ejemplo PR",num:"UG-2026-014",date:{en:"Oct 18, 2026",es:"18 oct 2026"},pdf:"propuesta-ejemplo.pdf"}
-  };
-  let active=null, pdfDoc=null, scale=1.3;
-  function route(){
-    const portal=location.hash==='#portal';
-    $('view-home').hidden=portal; $('view-portal').hidden=!portal;
-    if(portal){ window.scrollTo(0,0); if(!active) setTimeout(()=>$('g-pass').focus(),50); }
-  }
-  addEventListener('hashchange',route);
-
-  function fillDash(){
-    $('d-client').textContent=(L==='en'?'Prepared for ':'Preparada para ')+active.client;
-    $('d-num').textContent='#'+active.num; $('d-date').textContent=active.date[L];
-    const wa=t=>'https://wa.me/17879494781?text='+encodeURIComponent(t);
-    $('approve').href=wa(L==='en'?`Hi Update Group! I approve proposal #${active.num} for ${active.client}.`:`¡Hola Update Group! Apruebo la propuesta #${active.num} para ${active.client}.`);
-    $('ask').href=wa(L==='en'?`Hi Update Group! I have questions about proposal #${active.num}.`:`¡Hola Update Group! Tengo preguntas sobre la propuesta #${active.num}.`);
-  }
-  async function render(){
-    const box=$('pages'); box.innerHTML='';
-    for(let i=1;i<=pdfDoc.numPages;i++){
-      const page=await pdfDoc.getPage(i), vp=page.getViewport({scale:scale*(devicePixelRatio||1)});
-      const cv=document.createElement('canvas'); cv.width=vp.width; cv.height=vp.height;
-      cv.style.width=(vp.width/(devicePixelRatio||1))+'px'; cv.setAttribute('aria-label','Page '+i);
-      box.appendChild(cv); await page.render({canvasContext:cv.getContext('2d'),viewport:vp}).promise;
-    }
-    $('pg-info').textContent=(L==='en'?'Pages: ':'Páginas: ')+pdfDoc.numPages+' · '+Math.round(scale/1.3*100)+'%';
-  }
-  async function open(p){
-    active=p; $('gate').hidden=true; $('dash').hidden=false; fillDash();
-    try{
-      if(!window.pdfjsLib) throw new Error('pdfjs');
-      pdfDoc=await pdfjsLib.getDocument({url:(root.dataset.base||'')+p.pdf,isEvalSupported:false}).promise; await render();
-    }catch(err){
-      $('pages').innerHTML=`<p class="loading">${L==='en'?'The proposal could not load. Message us on WhatsApp and we’ll send it right away.':'No se pudo cargar la propuesta. Escríbenos por WhatsApp y te la enviamos enseguida.'}</p>`;
-    }
-  }
-  $('gate-form').addEventListener('submit',e=>{
-    e.preventDefault();
-    const code=$('g-pass').value.trim().toUpperCase(), err=$('g-err');
-    if(PROPOSALS[code]){err.hidden=true; $('g-pass').value=''; open(PROPOSALS[code]);}
-    else{err.hidden=false; err.textContent= L==='en'?'That access code doesn’t match. Check the message we sent you or contact us on WhatsApp.':'Esa clave no coincide. Revisa el mensaje que te enviamos o escríbenos por WhatsApp.';}
-  });
-  $('logout').addEventListener('click',()=>{active=null;pdfDoc=null;$('dash').hidden=true;$('gate').hidden=false;$('pages').innerHTML='';$('g-pass').focus();});
-  $('z-in').addEventListener('click',()=>{if(pdfDoc&&scale<2.6){scale+=.25;render();}});
-  $('z-out').addEventListener('click',()=>{if(pdfDoc&&scale>.8){scale-=.25;render();}});
-
+  // ---- Enlaces viejos a #portal ahora van al portal nuevo
+  if(location.hash==='#portal') location.replace('portal.html');
 
   // ---- Servicios en movimiento: entrada escalonada, inclinación y brillo que sigue el cursor
   const motionOK=!matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -137,5 +90,5 @@
     revealEls.forEach(el=>el.classList.add('is-in'));
   }
 
-  setLang(L); route();
+  setLang(L);
 })();

@@ -1,0 +1,87 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Portafolio | Update Group</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#070B1C">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&family=Quicksand:wght@500&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="portal.css">
+</head>
+<body>
+<header class="pbar">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Update Group, volver al website"><img src="mark.png" alt="" width="38" height="33"></a>
+    <div class="pbar-who"><small>Portal de clientes</small><b>Portafolio</b></div>
+    <nav class="ptabs" aria-label="Portal">
+      <a href="portal.html" id="tab-prop">Propuesta</a>
+      <a href="portafolio.html" aria-current="page">Portafolio</a>
+    </nav>
+    <a class="btn btn-grad btn-approve" href="https://wa.me/17879494781" target="_blank" rel="noopener">Hablemos</a>
+  </div>
+  <span class="pprog" id="prog" aria-hidden="true"></span>
+</header>
+
+<main>
+  <section class="pf-hero">
+    <div class="wrap">
+      <p class="k" data-rv>Portafolio · Diseño y contenido</p>
+      <h1 data-split>Nuestro <span class="gt">trabajo</span></h1>
+      <p data-rv style="--d:.3s">Una selección de lo que hemos creado para gobierno, marcas y causas en Puerto Rico. Toca cualquier pieza para verla en grande.</p>
+      <div class="pf-stats" data-rv style="--d:.45s">
+        <div><b class="gt" id="st-clients" data-count="0">0</b><span>marcas e instituciones</span></div>
+        <div><b class="gt" id="st-pieces" data-count="0">0</b><span>piezas en esta muestra</span></div>
+        <div><b class="gt" data-count="7">0</b><span>años de experiencia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="filters" id="filters" role="group" aria-label="Filtrar trabajos"></div>
+    <div class="masonry" id="grid"></div>
+  </section>
+
+  <section class="wrap" style="margin-top:clamp(56px,8vw,100px)">
+    <article class="case" data-rv="zoom">
+      <button class="mitem" type="button" id="case-img" style="cursor:zoom-in;margin:0"><img src="img/portfolio/coca-cola-vip-1.jpg" alt="Landing page del Coca-Cola VIP Lounge" width="1000" height="568" loading="lazy"></button>
+      <div>
+        <p class="k">Caso de éxito</p>
+        <h2>Coca-Cola · <span class="gt">VIP Lounge</span></h2>
+        <p>Una activación digital para que los consumidores vivieran conciertos en un espacio exclusivo dentro del Coca-Cola Music Hall.</p>
+        <ul>
+          <li><span class="gt">●</span> Landing page interactiva para registrar participantes.</li>
+          <li><span class="gt">●</span> Diseño alineado con la identidad de Coca-Cola.</li>
+          <li><span class="gt">●</span> Carga de recibos y validación digital.</li>
+          <li><span class="gt">●</span> Integración con eventos en vivo para una experiencia VIP.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="wrap" style="margin-top:clamp(56px,8vw,100px)">
+    <div class="approve" data-rv>
+      <div><h2>Trabajemos <span class="gt">juntos</span></h2><p>Conversemos sobre cómo llevar tu marca a su próximo nivel.</p></div>
+      <div class="approve-btns">
+        <a class="btn btn-grad" href="https://wa.me/17879494781" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        <a class="btn btn-glass" href="mailto:info@updategrouppr.com">info@updategrouppr.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Trabajo en grande">
+  <button class="lb-prev" type="button" aria-label="Anterior">←</button>
+  <figure><img id="lb-img" alt=""><figcaption><b id="lb-t"></b><span id="lb-c"></span></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Siguiente">→</button>
+  <button class="lb-close" type="button" aria-label="Cerrar">✕</button>
+</div>
+
+<footer class="pfoot"><div class="wrap"><span>© 2026 Update Group · Portafolio</span><a href="index.html">updategrouppr.com</a></div></footer>
+
+<script src="js/portfolio-data.js"></script>
+<script src="js/portal-common.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/portafolio.js"></script>
+</body></html>

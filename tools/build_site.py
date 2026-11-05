@@ -106,7 +106,11 @@ def prefix_assets(html):
     """Las páginas en /es/ cargan imágenes, css y js desde la carpeta de arriba."""
     def fix(m):
         attr, val = m.group(1), m.group(2)
-        if re.match(r"(https?:|mailto:|tel:|data:|#|/|\.\./)", val) or re.match(r"[^#?]*\.html([#?].*)?$", val):
+        if re.match(r"(https?:|mailto:|tel:|data:|#|/|\.\./)", val):
+            return m.group(0)
+        # Las páginas bilingües tienen copia en /es/; las demás (portal, propuesta, portafolio) solo arriba
+        page = re.match(r"([^#?]*\.html)([#?].*)?$", val)
+        if page and page.group(1) in PAGES:
             return m.group(0)
         return f'{attr}="../{val}"'
     return re.sub(r'\b(src|href)="([^"]+)"', fix, html)

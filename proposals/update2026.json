@@ -1,0 +1,34 @@
+{
+  "lang": "es",
+  "numero": "UG-2026-014",
+  "fecha": "5 de noviembre de 2026",
+  "validez": "30 días",
+  "cliente": { "nombre": "Café Ejemplo PR", "contacto": "María Rivera", "cargo": "Fundadora" },
+  "titulo": "Estrategia digital, contenido y automatización",
+  "subtitulo": "Una propuesta para llenar el café entre semana, vender más catering y que ningún cliente se quede sin respuesta.",
+  "resumen": [
+    "En Update Group entendemos que un café vive de su comunidad. Hoy **tus clientes te buscan primero en Instagram y en Google**, y deciden en segundos si te visitan o te encargan un catering.",
+    "Proponemos una estrategia digital estructurada que **muestre lo que hace único a Café Ejemplo PR**, mantenga una presencia constante en redes y convierta los mensajes en pedidos, con **respuestas automáticas las 24 horas**.",
+    "Nuestro compromiso es ser tu aliado estratégico: trabajar contigo de cerca, medir cada mes y ajustar para que los resultados se noten en el café, no solo en la pantalla."
+  ],
+  "objetivos": [
+    { "titulo": "Más visitas entre semana", "texto": "Atraer público de lunes a jueves con contenido y promociones pensadas para esos días." },
+    { "titulo": "Más pedidos de catering", "texto": "Llegar a oficinas y eventos de la zona con campañas dirigidas y un proceso de pedido fácil." },
+    { "titulo": "Respuesta inmediata", "texto": "Contestar precios, horarios y pedidos al instante por WhatsApp e Instagram, incluso de noche." }
+  ],
+  "alcance": [
+    { "titulo": "Estrategia digital", "texto": "El punto de partida: dónde estar, qué decir y cómo medirlo.", "items": ["Diagnóstico de marca, redes y competencia", "Plan de comunicación de 90 días", "Calendario de contenido mensual"] },
+    { "titulo": "Manejo de redes sociales", "texto": "Presencia constante y una comunidad atendida todos los días.", "items": ["Publicaciones en Instagram y Facebook", "Redacción de textos y hashtags", "Respuesta a comentarios y mensajes", "Reporte mensual de resultados"] },
+    { "titulo": "Contenido audiovisual", "texto": "Fotos y video propios que dan hambre de verdad.", "items": ["Sesión de fotos de productos y del local", "Reels y contenido vertical", "Artes gráficas para promociones"] },
+    { "titulo": "Marketing digital", "texto": "Anuncios dirigidos a las personas correctas, cerca del café.", "items": ["Campañas en Meta Ads (Facebook e Instagram)", "Audiencias por zona y por intereses", "Medición de pedidos y ajustes semanales"] },
+    { "titulo": "Automatización AI", "texto": "Un asistente que contesta y agenda mientras tú atiendes el café.", "items": ["Chatbot en WhatsApp e Instagram", "Respuestas sobre menú, precios y horarios", "Toma de pedidos de catering y recordatorios"] }
+  ],
+  "plan": [
+    { "etapa": "Semanas 1–2", "titulo": "Diagnóstico y arranque", "texto": "Reunión de arranque, accesos a tus redes, diagnóstico y plan de 90 días." },
+    { "etapa": "Semanas 3–4", "titulo": "Contenido y asistente AI", "texto": "Sesión de fotos, primeros reels y configuración del chatbot con tu menú." },
+    { "etapa": "Mes 2", "titulo": "Campañas en marcha", "texto": "Publicaciones constantes y anuncios dirigidos a visitas entre semana y catering." },
+    { "etapa": "Mes 3", "titulo": "Medir y optimizar", "texto": "Reporte de resultados, lo que funcionó y los próximos pasos para crecer." }
+  ],
+  "trabajo": { "sectores": ["marca"], "tipos": ["redes", "campana", "evento"] },
+  "cierre": "Confiamos en que nuestra experiencia en estrategia digital, contenido y automatización permitirá a Café Ejemplo PR llegar a más personas, vender más y atender mejor a sus clientes. Nos encantaría empezar a trabajar contigo."
+}

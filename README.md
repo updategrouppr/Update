@@ -6,10 +6,9 @@ Website de [Update Group](https://www.updategrouppr.com), en español e inglés.
 - `services.html`: página de servicios con fotos y detalle de cada servicio.
 - `site.css`: estilos compartidos por las dos páginas.
 - `js/`: el código JavaScript de las páginas (`main.js` para la principal, `services.js` para servicios).
-- `vendor/pdfjs/`: visor de PDF (pdf.js 3.11.174) guardado en el repo para no depender de otra página.
 - `img/`: fotos de los servicios (generadas con AI en Higgsfield).
 - `mark.png`: símbolo de la marca.
-- `propuesta-ejemplo.pdf`: propuesta de ejemplo que se muestra en el portal de clientes.
+- `portal.html`, `propuesta.html`, `portafolio.html` y `portal.css`: el portal de clientes (ver abajo).
 
 ## Verlo y publicarlo
 - Local: abrir `index.html` en el navegador.
@@ -39,6 +38,13 @@ Website de [Update Group](https://www.updategrouppr.com), en español e inglés.
 - Por eso **no se puede poner código `<script>` directo dentro del HTML**: el navegador lo bloquea. Todo el JavaScript va en archivos dentro de `js/`.
 - Si se añade algo de otra página (un video, un mapa, un chat), hay que permitir ese dominio en la política o no va a cargar.
 
+## Portal de clientes
+- `portal.html`: el cliente escribe su clave. La clave es el nombre de un archivo en `proposals/` (clave `UPDATE2026` → `proposals/update2026.json`).
+- `propuesta.html`: la propuesta como página animada, armada desde ese archivo: portada, resumen, objetivos, servicios, plan, quiénes somos, trabajo relacionado y aprobación por WhatsApp. **No lleva precios.**
+- `portafolio.html`: galería de trabajos con filtros y visor en grande.
+- **Crear una propuesta:** copiar `proposals/update2026.json` con otro nombre (solo letras minúsculas, números y guiones) y cambiar los textos. En el resumen, `**texto**` sale resaltado. En `trabajo` se escoge qué trabajos del portafolio se muestran (`sectores`: gob, marca, causa; `tipos`: redes, campana, evento, impreso, web).
+- **Añadir un trabajo al portafolio:** subir la imagen a `img/portfolio/` y añadir una línea en `js/portfolio-data.js`.
+
 ## Importante antes de usarlo con clientes reales
-- **Portal de clientes:** es un prototipo. La clave (`UPDATE2026`) está dentro del código, así que cualquiera puede verla. No subir propuestas reales hasta conectar un sistema con acceso protegido en el servidor.
+- **Portal de clientes:** es un prototipo. Este repo es público y los archivos de `proposals/` se pueden abrir sin clave, así que **no subir propuestas de clientes reales aquí**. Antes, el acceso tiene que validarse en el servidor (Contabo) y las propuestas tienen que vivir fuera del repo.
 - **Formulario de contacto:** envía a `/api/contact`, que necesita un servidor. En GitHub Pages ese servidor no existe, así que ahí el formulario muestra el aviso para escribir por WhatsApp.

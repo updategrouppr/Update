@@ -54,7 +54,7 @@
         <button type="button" id="l-en" data-set="en" aria-pressed="true">EN</button>
         <button type="button" id="l-es" data-set="es" aria-pressed="false">ES</button>
       </div>
-      <a class="btn btn-glass" href="#portal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span class="t"><i class="en">Client portal</i><i class="es">Portal de clientes</i></span></a>
+      <a class="btn btn-glass" href="portal.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span class="t"><i class="en">Client portal</i><i class="es">Portal de clientes</i></span></a>
     </div>
   </div>
 </header>
@@ -72,7 +72,7 @@
         <p class="lede"><span class="en">Your brand, at its <strong>next level</strong>. We turn ideas into actions that create <strong>real impact</strong>: digital marketing, content and AI automations, made in Puerto Rico.</span><span class="es">Tu marca, en su <strong>próximo nivel</strong>. Convertimos ideas en acciones que generan <strong>impacto real</strong>: mercadeo digital, contenido y automatizaciones AI, hecho en Puerto Rico.</span></p>
         <div class="ctas">
           <a class="btn btn-grad" href="#contacto"><span class="en">Let’s talk →</span><span class="es">¡Hablemos! →</span></a>
-          <a class="btn btn-glass" href="#portal"><i class="en">I have a proposal</i><i class="es">Tengo una propuesta</i></a>
+          <a class="btn btn-glass" href="portal.html"><i class="en">I have a proposal</i><i class="es">Tengo una propuesta</i></a>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
           <h3><span class="en">Proposal portal</span><span class="es">Portal de propuestas</span></h3>
           <p><span class="en">Got a proposal from us? Enter your private access code to view it, review it and approve it in one place.</span><span class="es">¿Te enviamos una propuesta? Entra con tu clave privada para verla, revisarla y aprobarla en un solo lugar.</span></p>
         </div>
-        <a class="btn btn-grad" href="#portal"><i class="en">Open portal</i><i class="es">Abrir portal</i></a>
+        <a class="btn btn-grad" href="portal.html"><i class="en">Open portal</i><i class="es">Abrir portal</i></a>
       </article>
     </div>
   </section>
@@ -212,63 +212,7 @@
   </section>
 </main>
 
-<!-- ============ PORTAL ============ -->
-<main id="view-portal" hidden>
-  <div class="wrap">
-    <a class="back" href="#top">← <i class="en">Back to site</i><i class="es">Volver al website</i></a>
 
-    <div class="gate" id="gate">
-      <span class="lockico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-      <h2><span class="en">Client <span class="gt">portal</span></span><span class="es">Portal de <span class="gt">clientes</span></span></h2>
-      <p><span class="en">Enter the access code we sent you to view your proposal.</span><span class="es">Escribe la clave de acceso que te enviamos para ver tu propuesta.</span></p>
-      <form id="gate-form" novalidate>
-        <label for="g-pass"><span><i class="en">Access code</i><i class="es">Clave de acceso</i></span><input id="g-pass" type="password" autocomplete="off" required data-ph-en="Your access code" data-ph-es="Tu clave de acceso"></label>
-        <button class="btn btn-grad" type="submit"><span class="en">View my proposal</span><span class="es">Ver mi propuesta</span></button>
-        <p class="err" id="g-err" hidden></p>
-      </form>
-      <p class="demo"><i class="en">Demo: try the code</i><i class="es">Demo: prueba la clave</i> <code>UPDATE2026</code></p>
-    </div>
-
-    <div id="dash" hidden style="margin-top:26px">
-      <div class="dash-top">
-        <div>
-          <p class="k" id="d-client"></p>
-          <h2 style="margin-top:10px"><span class="en">Your <span class="gt">proposal</span></span><span class="es">Tu <span class="gt">propuesta</span></span></h2>
-        </div>
-        <button class="btn btn-glass" type="button" id="logout"><i class="en">Sign out</i><i class="es">Salir</i></button>
-      </div>
-      <div class="dash">
-        <div class="viewer">
-          <div class="vbar">
-            <span id="pg-info">—</span>
-            <div class="tools">
-              <button type="button" id="z-out" aria-label="Zoom out">−</button>
-              <button type="button" id="z-in" aria-label="Zoom in">+</button>
-            </div>
-          </div>
-          <div class="pages" id="pages"><p class="loading"><i class="en">Loading proposal…</i><i class="es">Cargando propuesta…</i></p></div>
-        </div>
-        <aside class="side">
-          <div class="card">
-            <span class="status"><i class="en">Pending approval</i><i class="es">Pendiente de aprobación</i></span>
-            <dl class="meta">
-              <div><dt><i class="en">Proposal</i><i class="es">Propuesta</i></dt><dd id="d-num"></dd></div>
-              <div><dt><i class="en">Sent</i><i class="es">Enviada</i></dt><dd id="d-date"></dd></div>
-              <div><dt><i class="en">Valid for</i><i class="es">Válida por</i></dt><dd><i class="en">30 days</i><i class="es">30 días</i></dd></div>
-            </dl>
-            <a class="btn btn-grad" id="approve" target="_blank" rel="noopener" href="#"><i class="en">Approve via WhatsApp</i><i class="es">Aprobar por WhatsApp</i></a>
-            <a class="btn btn-glass" id="ask" target="_blank" rel="noopener" href="#"><i class="en">I have questions</i><i class="es">Tengo preguntas</i></a>
-          </div>
-          <div class="card">
-            <p class="k"><i class="en">Your contact</i><i class="es">Tu contacto</i></p>
-            <p style="font-weight:600">Update Group</p>
-            <p style="color:var(--muted);font-size:.92rem">(787) 949-4781 · info@updategrouppr.com</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </div>
-</main>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2F6BFF"/><stop offset=".55" stop-color="#19CBEA"/><stop offset="1" stop-color="#8BE24C"/></linearGradient><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2F6BFF"/><stop offset=".55" stop-color="#19CBEA"/><stop offset="1" stop-color="#8BE24C"/></linearGradient></defs></svg>
 
@@ -284,8 +228,6 @@
   </div>
 </div></footer>
 
-<script src="vendor/pdfjs/pdf.min.js"></script>
-<script src="vendor/pdfjs/pdf.worker.min.js"></script>
 <script src="js/main.js"></script>
 
 </body></html>

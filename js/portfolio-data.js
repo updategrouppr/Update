@@ -1,0 +1,40 @@
+/* Portafolio de Update Group: lo usan portafolio.html y la sección "Trabajo relacionado" de las propuestas.
+   Para agregar un trabajo: subir la imagen a img/portfolio/ y añadir una línea aquí.
+   sector: "gob" (gobierno e instituciones) · "marca" (marcas) · "causa" (educación y causas)
+   tipo:   "redes" · "campana" · "evento" · "impreso" · "web" */
+window.UG_WORK = [
+  { client: "Autoridad del Distrito", sector: "gob", tipo: "redes", img: "distrito-1.jpg", w: 648, h: 810, es: "Ruta especial al Distrito", en: "Special route to the District" },
+  { client: "Autoridad del Distrito", sector: "gob", tipo: "campana", img: "distrito-2.jpg", w: 760, h: 941, es: "Concienciación sobre el autismo", en: "Autism awareness" },
+  { client: "Autoridad del Distrito", sector: "gob", tipo: "evento", img: "distrito-3.jpg", w: 764, h: 943, es: "Eventos de mayo en el Choli", en: "May events at the Coliseum" },
+  { client: "Comisión para la Seguridad en el Tránsito", sector: "gob", tipo: "campana", img: "cst-1.jpg", w: 764, h: 937, es: "Sanse no borra las consecuencias", en: "Sanse doesn’t erase consequences" },
+  { client: "Comisión para la Seguridad en el Tránsito", sector: "gob", tipo: "campana", img: "cst-2.jpg", w: 648, h: 810, es: "El impacto fue en la familia", en: "The impact hit the family" },
+  { client: "Comisión para la Seguridad en el Tránsito", sector: "gob", tipo: "campana", img: "cst-3.jpg", w: 675, h: 844, es: "El verdadero touchdown: pasa la llave", en: "The real touchdown: pass the keys" },
+  { client: "Del Valle · Coca-Cola", sector: "marca", tipo: "redes", img: "del-valle-1.jpg", w: 675, h: 662, es: "Dale un boost a tu sistema", en: "Boost your system" },
+  { client: "Del Valle · Coca-Cola", sector: "marca", tipo: "redes", img: "del-valle-2.jpg", w: 657, h: 662, es: "De lo más fresco de nuestro valle", en: "Fresh from our valley" },
+  { client: "Del Valle · Coca-Cola", sector: "marca", tipo: "redes", img: "del-valle-3.jpg", w: 671, h: 657, es: "Lo mejor de la piña en una lata", en: "The best pineapple in a can" },
+  { client: "ACUDEN · Dpto. de la Familia", sector: "gob", tipo: "redes", img: "acuden-1.jpg", w: 648, h: 648, es: "Child Care del Futuro", en: "Child Care of the Future" },
+  { client: "ACUDEN · Dpto. de la Familia", sector: "gob", tipo: "redes", img: "acuden-2.jpg", w: 648, h: 648, es: "EQUIP: impulsando la calidad", en: "EQUIP: driving quality" },
+  { client: "ACUDEN · Dpto. de la Familia", sector: "gob", tipo: "campana", img: "acuden-3.jpg", w: 567, h: 709, es: "Nuevas tarifas Child Care", en: "New Child Care rates" },
+  { client: "Universidad Central de Bayamón", sector: "causa", tipo: "campana", img: "ucb-1.jpg", w: 648, h: 648, es: "30 oportunidades académicas", en: "30 academic programs" },
+  { client: "Universidad Central de Bayamón", sector: "causa", tipo: "campana", img: "ucb-2.jpg", w: 540, h: 675, es: "Dijiste que comenzarías clases", en: "You said you’d start classes" },
+  { client: "Universidad Central de Bayamón", sector: "causa", tipo: "campana", img: "ucb-3.jpg", w: 540, h: 675, es: "No dejes pasar esta oportunidad", en: "Don’t miss this opportunity" },
+  { client: "Autoridad de los Puertos", sector: "gob", tipo: "evento", img: "puertos-1.jpg", w: 648, h: 810, es: "Conversatorio: infraestructura portuaria", en: "Panel: port infrastructure" },
+  { client: "Autoridad de los Puertos", sector: "gob", tipo: "evento", img: "puertos-2.jpg", w: 648, h: 810, es: "Conferencia de prensa", en: "Press conference" },
+  { client: "Autoridad de los Puertos", sector: "gob", tipo: "redes", img: "puertos-3.jpg", w: 628, h: 941, es: "¿Cuál es tu mayor reto al viajar?", en: "What’s your biggest travel challenge?" },
+  { client: "Dpto. de Corrección y Rehabilitación", sector: "gob", tipo: "redes", img: "dcr-1.jpg", w: 566, h: 800, es: "Felicidades a nuestro Secretario", en: "Congratulations to our Secretary" },
+  { client: "Dpto. de Corrección y Rehabilitación", sector: "gob", tipo: "redes", img: "dcr-2.jpg", w: 648, h: 810, es: "Semana de la Policía", en: "Police Week" },
+  { client: "Dpto. de Corrección y Rehabilitación", sector: "gob", tipo: "redes", img: "dcr-3.jpg", w: 648, h: 808, es: "Noticias DCR", en: "DCR news" },
+  { client: "Ticketera", sector: "marca", tipo: "evento", img: "ticketera-1.jpg", w: 566, h: 564, es: "José Luis Rodríguez “El Puma”", en: "José Luis Rodríguez “El Puma”" },
+  { client: "Ticketera", sector: "marca", tipo: "redes", img: "ticketera-2.jpg", w: 567, h: 567, es: "Juntos trabajando para ti", en: "Working together for you" },
+  { client: "Ticketera", sector: "marca", tipo: "evento", img: "ticketera-3.jpg", w: 567, h: 566, es: "Sold out: 4ta función", en: "Sold out: 4th show" },
+  { client: "IDEA · Gobierno de Puerto Rico", sector: "gob", tipo: "campana", img: "idea-1.jpg", w: 615, h: 768, es: "Revisar los reglamentos", en: "Reviewing regulations" },
+  { client: "IDEA · Gobierno de Puerto Rico", sector: "gob", tipo: "campana", img: "idea-2.jpg", w: 681, h: 852, es: "Menos pasos, más claridad", en: "Fewer steps, more clarity" },
+  { client: "IDEA · Gobierno de Puerto Rico", sector: "gob", tipo: "web", img: "idea-3.jpg", w: 615, h: 768, es: "Portal de Transparencia Pública", en: "Public Transparency Portal" },
+  { client: "Qué Pezca’o", sector: "marca", tipo: "redes", img: "que-pezcao-1.jpg", w: 585, h: 577, es: "Los mejores mofongos", en: "The best mofongos" },
+  { client: "Travel With Sears", sector: "marca", tipo: "redes", img: "travel-with-sears-1.jpg", w: 659, h: 659, es: "Viaje a Ponce", en: "Trip to Ponce" },
+  { client: "Chuck E. Cheese", sector: "marca", tipo: "redes", img: "chuck-e-cheese-1.jpg", w: 540, h: 675, es: "Día del Síndrome de Down", en: "World Down Syndrome Day" },
+  { client: "Frito-Lay", sector: "marca", tipo: "impreso", img: "frito-lay-1.jpg", w: 616, h: 608, es: "Banners Cheetos Popcorn", en: "Cheetos Popcorn banners" },
+  { client: "Susan G. Komen PR", sector: "causa", tipo: "evento", img: "komen-1.jpg", w: 566, h: 800, es: "Pink Gala: Pearls of Hope", en: "Pink Gala: Pearls of Hope" },
+  { client: "Susan G. Komen PR", sector: "causa", tipo: "campana", img: "komen-2.jpg", w: 540, h: 675, es: "Tu historia inspira", en: "Your story inspires" },
+  { client: "Coca-Cola · VIP Lounge", sector: "marca", tipo: "web", img: "coca-cola-vip-1.jpg", w: 1000, h: 568, es: "Landing page VIP Lounge", en: "VIP Lounge landing page" }
+];
