@@ -44,7 +44,7 @@
 .gate-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--grad)}
 .gate-card h2{font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:2rem;line-height:.95;margin:0}
 .gate-card p{color:var(--muted);margin:0;font-size:.95rem}
-.code-in{font:inherit;font-family:var(--f-display);font-weight:800;font-size:1.35rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:16px;width:100%;transition:border-color .2s,box-shadow .2s}
+.code-in{font:inherit;font-family:var(--f-display);font-weight:800;font-size:1.35rem;letter-spacing:.18em;text-align:center;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:16px;width:100%;transition:border-color .2s,box-shadow .2s}
 .code-in:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px color-mix(in srgb,var(--cyan) 18%,transparent)}
 .code-in.shake{animation:shake .45s}
 @keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}

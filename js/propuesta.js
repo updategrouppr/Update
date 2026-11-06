@@ -7,8 +7,8 @@
   const check = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#ckg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   const pad = n => String(n).padStart(2, '0');
 
-  const code = getCode();
-  if (!code) { location.replace('portal.html'); return; }
+  // Sin clave en el enlace se abre la propuesta de ejemplo
+  const code = getCode() || 'update2026';
   let P;
   try {
     const r = await fetch('proposals/' + code + '.json', { cache: 'no-store' });
@@ -16,7 +16,7 @@
     P = await r.json();
   } catch (_) {
     try { sessionStorage.removeItem('ug-prop'); } catch (e) {}
-    location.replace('portal.html'); return;
+    location.replace('portal.html' + location.hash); return;
   }
 
   // Degradado para los íconos de check

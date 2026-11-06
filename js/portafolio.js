@@ -5,8 +5,8 @@
   const $ = id => document.getElementById(id);
   const all = window.UG_WORK || [];
 
-  // Si el cliente ya entró con su clave, la pestaña "Propuesta" lo lleva directo
-  try { if (sessionStorage.getItem('ug-prop')) $('tab-prop').href = 'propuesta.html'; } catch (_) {}
+  // La pestaña "Propuesta" vuelve a la propuesta que el cliente estaba viendo
+  try { const c = sessionStorage.getItem('ug-prop'); if (c) $('tab-prop').href = 'propuesta.html#' + c; } catch (_) {}
 
   const FILTERS = [
     ['todos', 'Todos', () => true],

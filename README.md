@@ -39,12 +39,13 @@ Website de [Update Group](https://www.updategrouppr.com), en español e inglés.
 - Si se añade algo de otra página (un video, un mapa, un chat), hay que permitir ese dominio en la política o no va a cargar.
 
 ## Portal de clientes
-- `portal.html`: el cliente escribe su clave. La clave es el nombre de un archivo en `proposals/` (clave `UPDATE2026` → `proposals/update2026.json`).
-- `propuesta.html`: la propuesta como página animada, armada desde ese archivo: portada, resumen, objetivos, servicios, plan, quiénes somos, trabajo relacionado y aprobación por WhatsApp. **No lleva precios.**
+- `portal.html`: entrada con contraseña. La revisa el servidor (`/api/portal/login` en el servicio `update-api`) y da una sesión de 12 horas. Sin sesión, el servidor no entrega `propuesta.html`, `portafolio.html`, `/proposals/` ni `img/portfolio/` (Caddy `forward_auth`). Cambiar la contraseña: `ssh -t -i ~/.ssh/dcr_vps_ed25519 root@147.93.5.74 update-portal-password` (cierra todas las sesiones).
+- `propuesta.html`: la propuesta como página animada, armada desde `proposals/<nombre>.json`. Se abre con `propuesta.html#<nombre>` (sin nombre abre la de ejemplo). **No lleva precios.**
 - `portafolio.html`: galería de trabajos con filtros y visor en grande.
-- **Crear una propuesta:** copiar `proposals/update2026.json` con otro nombre (solo letras minúsculas, números y guiones) y cambiar los textos. En el resumen, `**texto**` sale resaltado. En `trabajo` se escoge qué trabajos del portafolio se muestran (`sectores`: gob, marca, causa; `tipos`: redes, campana, evento, impreso, web).
+- **Crear una propuesta:** copiar `proposals/update2026.json`, cambiar los textos y guardarla **en el servidor** en `/srv/update/propuestas/<nombre>.json` (solo minúsculas, números y guiones). **No subir propuestas reales a este repo: es público.** El enlace para el cliente es `https://www.updategrouppr.com/portal.html#<nombre>`. En el resumen, `**texto**` sale resaltado. En `trabajo` se escoge qué trabajos se muestran (`sectores`: gob, marca, causa; `tipos`: redes, campana, evento, impreso, web).
 - **Añadir un trabajo al portafolio:** subir la imagen a `img/portfolio/` y añadir una línea en `js/portfolio-data.js`.
+- Local (sin servidor) la entrada no funciona; para ver la propuesta abrir directo `propuesta.html`.
 
 ## Importante antes de usarlo con clientes reales
-- **Portal de clientes:** es un prototipo. Este repo es público y los archivos de `proposals/` se pueden abrir sin clave, así que **no subir propuestas de clientes reales aquí**. Antes, el acceso tiene que validarse en el servidor (Contabo) y las propuestas tienen que vivir fuera del repo.
+- **Portal de clientes:** las propuestas reales van solo en el servidor (`/srv/update/propuestas`), nunca en este repo público.
 - **Formulario de contacto:** envía a `/api/contact`, que necesita un servidor. En GitHub Pages ese servidor no existe, así que ahí el formulario muestra el aviso para escribir por WhatsApp.
